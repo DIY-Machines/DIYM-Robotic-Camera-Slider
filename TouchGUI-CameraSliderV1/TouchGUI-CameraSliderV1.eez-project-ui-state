@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[TouchGUI-CameraSliderV1.eez-project]:/userPages/3",
+    "selectedUserPageObject": "[TouchGUI-CameraSliderV1.eez-project]:/userPages/2",
     "selectedGlobalVariableObject": "[TouchGUI-CameraSliderV1.eez-project]:/variables/globalVariables/45",
     "selectedStyleObject": "[TouchGUI-CameraSliderV1.eez-project]:/lvglStyles/styles/0/childStyles/0",
     "subnavigationSelectedItems": {
@@ -82,6 +82,7 @@
           {
             "type": "border",
             "selected": 1,
+            "size": 63.5,
             "location": "bottom",
             "children": [
               {
@@ -200,17 +201,40 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 61.89393352797302,
+              "selected": 2,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#a3768cec-daad-4b33-ac70-49a76c35699c",
+                  "id": "#b7a13a43-1b85-4ec3-be0c-56e394793d38",
+                  "name": "Set Movement Style",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[TouchGUI-CameraSliderV1.eez-project]:/userPages/1",
+                    "permanent": false
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#cda7ec5e-3c02-4a18-976d-ceaff63ecf46",
                   "name": "Set Speed-Duration of Movement",
                   "component": "editor",
                   "config": {
                     "objectPath": "[TouchGUI-CameraSliderV1.eez-project]:/userPages/3",
-                    "permanent": false
+                    "permanent": true
+                  },
+                  "icon": "svg:page"
+                },
+                {
+                  "type": "tab",
+                  "id": "#a3768cec-daad-4b33-ac70-49a76c35699c",
+                  "name": "Set End Points",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[TouchGUI-CameraSliderV1.eez-project]:/userPages/2",
+                    "permanent": true
                   },
                   "icon": "svg:page"
                 },
@@ -1117,35 +1141,27 @@
           "3": {},
           "4": {},
           "5": {
-            "0": {
-              "$selected": true
-            }
+            "0": {}
           },
           "6": {
-            "0": {
-              "$selected": true
-            }
+            "0": {}
           },
           "7": {
-            "0": {
-              "$selected": true
-            }
+            "0": {}
           },
           "8": {
-            "0": {
-              "$selected": true
-            }
+            "0": {}
           },
           "10": {
-            "0": {
-              "$selected": true
-            }
+            "0": {}
           },
           "11": {},
           "13": {},
           "14": {},
           "15": {},
-          "16": {}
+          "16": {
+            "$selected": true
+          }
         },
         "1": {},
         "4": {},
@@ -1153,10 +1169,10 @@
       },
       "transform": {
         "translate": {
-          "x": -366.13066888888875,
-          "y": -124.23061444444443
+          "x": -163.11789018518516,
+          "y": -200.05119175925927
         },
-        "scale": 3
+        "scale": 2.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1169,24 +1185,28 @@
       "selectionFront": {},
       "selectionBack": {
         "0": {
-          "0": {},
           "1": {},
           "2": {},
           "3": {},
           "4": {},
           "5": {},
           "6": {},
-          "7": {
-            "$selected": true
-          },
-          "14": {
-            "0": {}
-          },
+          "7": {},
+          "8": {},
+          "9": {},
+          "11": {},
           "15": {},
-          "16": {
+          "16": {},
+          "19": {},
+          "20": {},
+          "23": {
             "0": {}
           },
-          "17": {}
+          "24": {},
+          "25": {
+            "0": {}
+          },
+          "26": {}
         },
         "1": {},
         "16": {},
@@ -1194,10 +1214,10 @@
       },
       "transform": {
         "translate": {
-          "x": -561.7969940626976,
-          "y": 81.87012716812876
+          "x": -443.80522961337863,
+          "y": -427.94148499791197
         },
-        "scale": 1.75
+        "scale": 2.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1224,7 +1244,9 @@
         "0": {
           "0": {},
           "1": {},
-          "4": {},
+          "4": {
+            "$selected": true
+          },
           "12": {},
           "16": {},
           "17": {},
@@ -1245,10 +1267,10 @@
       },
       "transform": {
         "translate": {
-          "x": -576,
-          "y": -427.5
+          "x": -269,
+          "y": -221.5
         },
-        "scale": 3
+        "scale": 2.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1270,8 +1292,8 @@
       },
       "transform": {
         "translate": {
-          "x": -132.71428571428567,
-          "y": -49.29999999999998
+          "x": -348.71428571428567,
+          "y": -99.29999999999998
         },
         "scale": 1.75
       },
@@ -1393,14 +1415,10 @@
   "selectedStylePropertyName": "",
   "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
-  "lvglExpandedPropertiesGroup": [
-    "BACKGROUND",
-    "MISCELLANEOUS",
-    "BORDER"
-  ],
+  "lvglExpandedPropertiesGroup": [],
   "showInactiveFlowsInDebugger": false,
   "globalFlowZoom": true,
-  "flowZoom": 3,
+  "flowZoom": 2.5,
   "implementationLanguage": "C++",
   "openDialogDefaultPath": "/Users/lewisaburrow/Library/CloudStorage/GoogleDrive-lewis@diymachines.co.uk/My Drive/DIY Machines/Projects - Code,models and scripts/2025/2025 DIYM - Camera Slider V1/Code/CameraSliderV1/Images/CameraIcon_Reduced_20.png"
 }
