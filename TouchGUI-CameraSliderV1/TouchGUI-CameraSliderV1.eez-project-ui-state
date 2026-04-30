@@ -1172,7 +1172,7 @@
           "x": -163.11789018518516,
           "y": -200.05119175925927
         },
-        "scale": 2.5
+        "scale": 1.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1214,10 +1214,10 @@
       },
       "transform": {
         "translate": {
-          "x": -443.80522961337863,
-          "y": -427.94148499791197
+          "x": -442.3581377680272,
+          "y": -331.4482243320806
         },
-        "scale": 2.5
+        "scale": 1.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1270,7 +1270,7 @@
           "x": -269,
           "y": -221.5
         },
-        "scale": 2.5
+        "scale": 1.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1418,7 +1418,7 @@
   "lvglExpandedPropertiesGroup": [],
   "showInactiveFlowsInDebugger": false,
   "globalFlowZoom": true,
-  "flowZoom": 2.5,
+  "flowZoom": 1.5,
   "implementationLanguage": "C++",
   "openDialogDefaultPath": "/Users/lewisaburrow/Library/CloudStorage/GoogleDrive-lewis@diymachines.co.uk/My Drive/DIY Machines/Projects - Code,models and scripts/2025/2025 DIYM - Camera Slider V1/Code/CameraSliderV1/Images/CameraIcon_Reduced_20.png"
 }

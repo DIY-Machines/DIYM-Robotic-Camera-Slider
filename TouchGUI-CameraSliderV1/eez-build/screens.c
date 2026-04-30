@@ -1690,7 +1690,7 @@ void create_screen_set_end_points() {
             // X Axis Blocker
             lv_obj_t *obj = lv_obj_create(parent_obj);
             objects.x_axis_blocker = obj;
-            lv_obj_set_pos(obj, -9, 40);
+            lv_obj_set_pos(obj, -9, 38);
             lv_obj_set_size(obj, 329, 94);
             lv_obj_set_style_bg_opa(obj, 230, LV_PART_MAIN | LV_STATE_DEFAULT);
             lv_obj_set_style_border_width(obj, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
