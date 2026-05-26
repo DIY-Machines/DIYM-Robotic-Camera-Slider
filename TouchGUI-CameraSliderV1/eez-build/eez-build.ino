@@ -184,11 +184,23 @@ void sendMoveYCommand()
 }
 
 /* ===== Timelapse motion send helpers ===== */
-int32_t getXTimelapseSpeedStepsPerSec()
+float getXTimelapseSpeedStepsPerSec()
 {
-    float v = (float)get_var_tl_x_speed_mms() * X_STEPS_PER_MM;
+    float v = 0.0f;
+
+    if (get_var_sot_x_speed_or_duration()) {
+        float distanceSteps = fabsf((float)get_var_position_b() - (float)get_var_position_a());
+        float durationS = (float)get_var_tl_x_duration_s();
+
+        if (distanceSteps > 0.0f && durationS > 0.0f) {
+            v = distanceSteps / durationS;
+        }
+    } else {
+        v = (float)get_var_tl_x_speed_mms() * X_STEPS_PER_MM;
+    }
+
     if (v < 0.0f) v = -v;
-    return (int32_t)lroundf(v);
+    return v;
 }
 
 int32_t getXTimelapseAccelStepsPerSec2()
@@ -198,10 +210,22 @@ int32_t getXTimelapseAccelStepsPerSec2()
     return (int32_t)lroundf(a);
 }
 
-int32_t getYTimelapseSpeedStepsPerSec()
+float getYTimelapseSpeedStepsPerSec()
 {
-    float v = (float)get_var_tl_y_speed_mms() * Y_STEPS_PER_DEGREE;
-    return (int32_t)lroundf(v);
+    float v = 0.0f;
+
+    if (get_var_sot_y_speed_or_duration()) {
+        float distanceSteps = fabsf((float)get_var_position_d() - (float)get_var_position_c());
+        float durationS = (float)get_var_tl_y_duration_s();
+
+        if (distanceSteps > 0.0f && durationS > 0.0f) {
+            v = distanceSteps / durationS;
+        }
+    } else {
+        v = (float)get_var_tl_y_speed_mms() * Y_STEPS_PER_DEGREE;
+    }
+
+    return v;
 }
 
 int32_t getYTimelapseAccelStepsPerSec2()
@@ -213,18 +237,18 @@ int32_t getYTimelapseAccelStepsPerSec2()
 
 void sendTimelapseMoveXToSteps(int32_t targetSteps)
 {
-    int32_t speedSteps = getXTimelapseSpeedStepsPerSec();
+    float speedSteps = getXTimelapseSpeedStepsPerSec();
     int32_t accelSteps = getXTimelapseAccelStepsPerSec2();
 
-    if (speedSteps <= 0 || accelSteps <= 0) {
+    if (speedSteps <= 0.0f || accelSteps <= 0) {
         return;
     }
 
     char cmd[64];
     snprintf(cmd, sizeof(cmd),
-        "MOVE X %ld %ld %ld",
+        "MOVE X %ld %.4f %ld",
         (long)targetSteps,
-        (long)speedSteps,
+        speedSteps,
         (long)accelSteps
     );
 
@@ -234,19 +258,19 @@ void sendTimelapseMoveXToSteps(int32_t targetSteps)
 
 void sendTimelapseMoveYToSteps(int32_t targetSteps)
 {
-    int32_t speedSteps = getYTimelapseSpeedStepsPerSec();
-    if (speedSteps < 0) speedSteps = -speedSteps;
+    float speedSteps = getYTimelapseSpeedStepsPerSec();
+    if (speedSteps < 0.0f) speedSteps = -speedSteps;
     int32_t accelSteps = getYTimelapseAccelStepsPerSec2();
 
-    if (speedSteps <= 0 || accelSteps <= 0) {
+    if (speedSteps <= 0.0f || accelSteps <= 0) {
         return;
     }
 
     char cmd[64];
     snprintf(cmd, sizeof(cmd),
-        "MOVE Y %ld %ld %ld",
+        "MOVE Y %ld %.4f %ld",
         (long)targetSteps,
-        (long)speedSteps,
+        speedSteps,
         (long)accelSteps
     );
 
@@ -256,16 +280,16 @@ void sendTimelapseMoveYToSteps(int32_t targetSteps)
 
 void sendTimelapseInfiniteYRun()
 {
-    int32_t speedSteps = getYTimelapseSpeedStepsPerSec();
+    float speedSteps = (float)get_var_tl_y_speed_mms() * Y_STEPS_PER_DEGREE;
 
-    if (speedSteps == 0) {
+    if (speedSteps == 0.0f) {
         return;
     }
 
     char cmd[64];
     snprintf(cmd, sizeof(cmd),
-        "RUN Y %ld",
-        (long)speedSteps
+        "RUN Y %.4f",
+        speedSteps
     );
 
     sendRawMotionCommand(cmd);
@@ -720,10 +744,10 @@ void startTimelapseIfRequested()
 
     /* X axis */
     if (get_var_x_ato_b_movement() || get_var_x_ato_brepeated_movement()) {
-        int32_t xSpeedSteps = getXTimelapseSpeedStepsPerSec();
+        float xSpeedSteps = getXTimelapseSpeedStepsPerSec();
         int32_t xAccelSteps = getXTimelapseAccelStepsPerSec2();
 
-        if (xSpeedSteps > 0 && xAccelSteps > 0 && get_var_position_a() != get_var_position_b()) {
+        if (xSpeedSteps > 0.0f && xAccelSteps > 0 && get_var_position_a() != get_var_position_b()) {
             sendTimelapseMoveXToSteps(get_var_position_a());
             xTimelapsePhase = TL_AXIS_TO_START;
             xTimelapseRepeat = get_var_x_ato_brepeated_movement();
@@ -733,19 +757,19 @@ void startTimelapseIfRequested()
 
     /* Y axis */
     if (get_var_y_cto_d_movement() || get_var_y_cto_drepeated_movement()) {
-        int32_t ySpeedSteps = getYTimelapseSpeedStepsPerSec();
+        float ySpeedSteps = getYTimelapseSpeedStepsPerSec();
         int32_t yAccelSteps = getYTimelapseAccelStepsPerSec2();
 
-        if (ySpeedSteps != 0 && yAccelSteps > 0 && get_var_position_c() != get_var_position_d()) {
+        if (ySpeedSteps != 0.0f && yAccelSteps > 0 && get_var_position_c() != get_var_position_d()) {
             sendTimelapseMoveYToSteps(get_var_position_c());
             yTimelapsePhase = TL_AXIS_TO_START;
             yTimelapseRepeat = get_var_y_cto_drepeated_movement();
             anyMovementStarted = true;
         }
     } else if (get_var_y_infinate_movement()) {
-        int32_t ySpeedSteps = getYTimelapseSpeedStepsPerSec();
+        float ySpeedSteps = (float)get_var_tl_y_speed_mms() * Y_STEPS_PER_DEGREE;
 
-        if (ySpeedSteps != 0) {
+        if (ySpeedSteps != 0.0f) {
             sendTimelapseInfiniteYRun();
             yTimelapseInfinite = true;
             anyMovementStarted = true;
