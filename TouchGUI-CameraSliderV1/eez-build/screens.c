@@ -1134,7 +1134,7 @@ void create_screen_set_movement_style() {
             // Homing needed
             lv_obj_t *obj = lv_button_create(parent_obj);
             objects.homing_needed = obj;
-            lv_obj_set_pos(obj, 53, 182);
+            lv_obj_set_pos(obj, 52, 198);
             lv_obj_set_size(obj, 208, 31);
             lv_obj_add_event_cb(obj, event_handler_cb_set_movement_style_homing_needed, LV_EVENT_ALL, flowState);
             {

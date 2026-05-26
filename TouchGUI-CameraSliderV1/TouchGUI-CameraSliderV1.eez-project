@@ -1952,8 +1952,8 @@
             {
               "objID": "0178ab09-4f67-4648-8e8a-fcd248d704fc",
               "type": "LVGLButtonWidget",
-              "left": 53,
-              "top": 182,
+              "left": 52,
+              "top": 198,
               "width": 208,
               "height": 31,
               "customInputs": [],
