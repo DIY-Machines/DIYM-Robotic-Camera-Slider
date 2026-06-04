@@ -56,7 +56,7 @@ Some links below are affiliate links. They help support the project at no extra 
 | Panel mountable power switch | 1 | https://geni.us/Power-Switch |
 | Female DC Power Barrel | 2 | https://geni.us/FemalePowerBarrel |
 | 100uF 35V Low ESR Capacitor | 3 | https://geni.us/Capacitor100uF35vESR |
-| PCB | 1 | Link following soon |
+| PCB | 1 | https://diymachines.etsy.com/uk/listing/4516518337/robotic-camera-slider-pcb-only |
 | Stepper Motor | 2 | https://geni.us/StepperMotor |
 | Contact Spring - Keystone Electronics 209 | 2 | https://geni.us/KeystoneElec209Contact |
 | Short DC Barrel Lead or DIY Male Connectors | 1 lead or 2 connectors | https://geni.us/DCBarrel-MaleToMale |
@@ -173,7 +173,7 @@ The project uses a custom PCB to simplify wiring between:
 - Optional fan
 - Optional battery input
 
-The PCB link will be added soon.
+PCB: https://diymachines.etsy.com/uk/listing/4516518337/robotic-camera-slider-pcb-only
 
 Before powering the project, check:
 
