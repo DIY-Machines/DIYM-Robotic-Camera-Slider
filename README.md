@@ -34,14 +34,6 @@ The slider is built around a length of 20x40 aluminium extrusion with a 3D print
 
 The electronics use an ESP32-based “Cheap Yellow Display” as the main touchscreen controller, with a Wemos D1 Mini acting as the motion co-processor. Two TMC2209 stepper drivers control the two NEMA 17 stepper motors.
 
-## Repository Contents
-
-This repository is intended to contain the firmware, wiring reference, and supporting project files for the camera slider.
-
-Typical folder structure:
-
-text . ├── README.md ├── firmware/ │   ├── main-display/ │   └── motion-coprocessor/ ├── docs/ │   ├── wiring/ │   ├── images/ │   └── assembly-notes/ ├── pcb/ └── LICENSE 
-
 The 3D printable files are available separately here:
 
 https://ko-fi.com/s/9e1b03c6d8
