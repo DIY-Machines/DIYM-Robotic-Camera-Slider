@@ -11,7 +11,7 @@ DIY Machines Camera Slider
 ## Project Links
 
 - Full project video: https://youtu.be/GgVlCD2qOv8
-- 3D printable parts: https://ko-fi.com/s/9e1b03c6d8
+- 3D printable parts: https://diymachines.etsy.com/listing/4516449862
 - Written project page: https://www.diymachines.co.uk/diy-3d-printable-motorised-camera-slider
 - DIY Machines YouTube channel: https://www.youtube.com/@DIYMachines
 
@@ -38,7 +38,7 @@ The electronics use an ESP32-based “Cheap Yellow Display” as the main touchs
 
 The 3D printable files are available separately here:
 
-https://ko-fi.com/s/9e1b03c6d8
+https://diymachines.etsy.com/listing/4516449862
 
 ## Bill of Materials
 
@@ -146,7 +146,7 @@ General printing recommendations:
 
 The 3D printable files are available here:
 
-https://ko-fi.com/s/9e1b03c6d8
+https://diymachines.etsy.com/listing/4516449862
 
 ## Firmware
 
