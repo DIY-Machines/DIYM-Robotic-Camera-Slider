@@ -4,6 +4,8 @@ A 3D printable robotic camera slider with a custom touchscreen interface, motori
 
 This project is designed for smooth product shots, live video work, B-roll, and motion timelapses. The slider can be built to different track lengths using 20x40 aluminium extrusion, and the touchscreen interface allows you to program speed, acceleration, movement time, and motion style.
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GgVlCD2qOv8/0.jpg)](https://www.youtube.com/watch?v=GgVlCD2qOv8)
+
 DIY Machines Camera Slider
 
 ## Project Links
