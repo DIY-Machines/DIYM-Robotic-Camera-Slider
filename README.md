@@ -72,7 +72,7 @@ Some links below are affiliate links. They help support the project at no extra 
 | GT2 idler wheel, 6mm belt, 5mm bore, toothed | 1 | https://geni.us/6mmIdler5mmBoreToothed |
 | GT2 Timing belt, 6mm wide | 1 | Needs to be twice the length of the extrusion plus 25cm: https://geni.us/TimingBelt5m |
 | POM Pulley 625zz Linear Bearing, 5mm bore | 4 | https://geni.us/625zzBearing-5mm |
-| 6mm GT2 250mm Circular Belt Loop | 1 | https://geni.us/GT2BeltLoop-250mm |
+| 6mm GT2 200mm Circular Belt Loop | 1 | [https://geni.us/GT2BeltLoop-200mm ](https://geni.us/GT2BeltLoop-200mm)|
 
 ### Optional Screw Terminals
 
